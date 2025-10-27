@@ -1,0 +1,292 @@
+/* レスポンシブデザイン用のカスタムCSS */
+
+/* スクロールバーのスタイリング */
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: #cbd5e0 #f7fafc;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #f7fafc;
+  border-radius: 3px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #cbd5e0;
+  border-radius: 3px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #a0aec0;
+}
+
+/* テーブルのレスポンシブ対応 */
+.responsive-table {
+  @apply w-full overflow-x-auto;
+}
+
+.responsive-table table {
+  @apply min-w-full;
+}
+
+/* モバイル用のカード表示 */
+@media (max-width: 768px) {
+  .mobile-card-view {
+    @apply block;
+  }
+  
+  .mobile-card-view .table-row {
+    @apply block border border-gray-200 rounded-lg mb-4 p-4 bg-white shadow-sm;
+  }
+  
+  .mobile-card-view .table-cell {
+    @apply block py-2 border-b border-gray-100 last:border-b-0;
+  }
+  
+  .mobile-card-view .table-cell::before {
+    content: attr(data-label) ": ";
+    @apply font-medium text-gray-600 inline-block w-24;
+  }
+}
+
+/* フォームのレスポンシブ対応 */
+.responsive-form {
+  @apply space-y-6;
+}
+
+.responsive-form .form-group {
+  @apply space-y-4;
+}
+
+@media (min-width: 768px) {
+  .responsive-form .form-row {
+    @apply grid grid-cols-2 gap-4;
+  }
+  
+  .responsive-form .form-row-3 {
+    @apply grid grid-cols-3 gap-4;
+  }
+  
+  .responsive-form .form-full {
+    @apply col-span-full;
+  }
+}
+
+/* ナビゲーションのレスポンシブ対応 */
+.responsive-nav {
+  @apply flex flex-col space-y-2;
+}
+
+@media (min-width: 768px) {
+  .responsive-nav {
+    @apply flex-row space-y-0 space-x-4;
+  }
+}
+
+/* ボタンのレスポンシブ対応 */
+.responsive-buttons {
+  @apply flex flex-col space-y-2;
+}
+
+@media (min-width: 640px) {
+  .responsive-buttons {
+    @apply flex-row space-y-0 space-x-2;
+  }
+}
+
+/* グリッドのレスポンシブ対応 */
+.responsive-grid {
+  @apply grid grid-cols-1 gap-4;
+}
+
+@media (min-width: 640px) {
+  .responsive-grid {
+    @apply grid-cols-2;
+  }
+}
+
+@media (min-width: 1024px) {
+  .responsive-grid {
+    @apply grid-cols-3;
+  }
+}
+
+@media (min-width: 1280px) {
+  .responsive-grid {
+    @apply grid-cols-4;
+  }
+}
+
+/* カードのレスポンシブ対応 */
+.responsive-card {
+  @apply bg-white rounded-lg shadow-sm border border-gray-200 p-4;
+}
+
+@media (min-width: 768px) {
+  .responsive-card {
+    @apply p-6;
+  }
+}
+
+/* テキストのレスポンシブサイズ */
+.responsive-text-xs {
+  @apply text-xs;
+}
+
+@media (min-width: 640px) {
+  .responsive-text-xs {
+    @apply text-sm;
+  }
+}
+
+.responsive-text-sm {
+  @apply text-sm;
+}
+
+@media (min-width: 640px) {
+  .responsive-text-sm {
+    @apply text-base;
+  }
+}
+
+.responsive-text-base {
+  @apply text-base;
+}
+
+@media (min-width: 640px) {
+  .responsive-text-base {
+    @apply text-lg;
+  }
+}
+
+/* スペーシングのレスポンシブ対応 */
+.responsive-padding {
+  @apply p-4;
+}
+
+@media (min-width: 640px) {
+  .responsive-padding {
+    @apply p-6;
+  }
+}
+
+@media (min-width: 1024px) {
+  .responsive-padding {
+    @apply p-8;
+  }
+}
+
+.responsive-margin {
+  @apply m-4;
+}
+
+@media (min-width: 640px) {
+  .responsive-margin {
+    @apply m-6;
+  }
+}
+
+@media (min-width: 1024px) {
+  .responsive-margin {
+    @apply m-8;
+  }
+}
+
+/* アニメーション */
+.fade-in {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.slide-in-right {
+  animation: slideInRight 0.3s ease-in-out;
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.slide-in-left {
+  animation: slideInLeft 0.3s ease-in-out;
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* フォーカス状態の改善 */
+.focus-visible {
+  @apply focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2;
+}
+
+/* ホバー効果 */
+.hover-lift {
+  @apply transition-transform duration-200 ease-in-out;
+}
+
+.hover-lift:hover {
+  @apply transform -translate-y-1;
+}
+
+/* 影の効果 */
+.shadow-soft {
+  box-shadow: 0 2px 15px -3px rgba(0, 0, 0, 0.07), 0 10px 20px -2px rgba(0, 0, 0, 0.04);
+}
+
+.shadow-medium {
+  box-shadow: 0 4px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* プリント用スタイル */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  
+  .print-break-before {
+    page-break-before: always;
+  }
+  
+  .print-break-after {
+    page-break-after: always;
+  }
+  
+  body {
+    font-size: 12pt;
+    line-height: 1.4;
+  }
+  
+  .responsive-card {
+    box-shadow: none;
+    border: 1px solid #000;
+  }
+}

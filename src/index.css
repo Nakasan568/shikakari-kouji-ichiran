@@ -1,0 +1,208 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* カスタムスタイルのインポート */
+@import './styles/responsive.css';
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  @apply bg-gray-50;
+}
+
+/* 基本的なリセット */
+* {
+  box-sizing: border-box;
+}
+
+/* フォーカス状態の統一 */
+button:focus,
+input:focus,
+select:focus,
+textarea:focus {
+  @apply outline-none ring-2 ring-blue-500 ring-offset-2;
+}
+
+/* リンクのスタイル */
+a {
+  @apply text-blue-600 hover:text-blue-800 transition-colors duration-200;
+}
+
+/* 見出しのスタイル */
+h1, h2, h3, h4, h5, h6 {
+  @apply font-semibold text-gray-900;
+}
+
+h1 {
+  @apply text-3xl;
+}
+
+h2 {
+  @apply text-2xl;
+}
+
+h3 {
+  @apply text-xl;
+}
+
+h4 {
+  @apply text-lg;
+}
+
+/* フォームコントロールの統一スタイル */
+.form-input {
+  @apply block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm;
+}
+
+.form-select {
+  @apply block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm;
+}
+
+.form-textarea {
+  @apply block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm;
+}
+
+/* ボタンの統一スタイル */
+.btn {
+  @apply inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 transition-colors duration-200;
+}
+
+.btn-primary {
+  @apply btn bg-blue-600 text-white hover:bg-blue-700 focus:ring-blue-500;
+}
+
+.btn-secondary {
+  @apply btn bg-gray-600 text-white hover:bg-gray-700 focus:ring-gray-500;
+}
+
+.btn-success {
+  @apply btn bg-green-600 text-white hover:bg-green-700 focus:ring-green-500;
+}
+
+.btn-danger {
+  @apply btn bg-red-600 text-white hover:bg-red-700 focus:ring-red-500;
+}
+
+.btn-warning {
+  @apply btn bg-yellow-600 text-white hover:bg-yellow-700 focus:ring-yellow-500;
+}
+
+.btn-outline {
+  @apply btn bg-white text-gray-700 border-gray-300 hover:bg-gray-50 focus:ring-blue-500;
+}
+
+/* カードの統一スタイル */
+.card {
+  @apply bg-white overflow-hidden shadow rounded-lg;
+}
+
+.card-header {
+  @apply px-4 py-5 sm:px-6 border-b border-gray-200;
+}
+
+.card-body {
+  @apply px-4 py-5 sm:p-6;
+}
+
+.card-footer {
+  @apply px-4 py-4 sm:px-6 bg-gray-50 border-t border-gray-200;
+}
+
+/* テーブルの統一スタイル */
+.table {
+  @apply min-w-full divide-y divide-gray-200;
+}
+
+.table thead {
+  @apply bg-gray-50;
+}
+
+.table th {
+  @apply px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider;
+}
+
+.table td {
+  @apply px-6 py-4 whitespace-nowrap text-sm text-gray-900;
+}
+
+.table tbody tr:nth-child(even) {
+  @apply bg-gray-50;
+}
+
+.table tbody tr:hover {
+  @apply bg-gray-100;
+}
+
+/* バッジの統一スタイル */
+.badge {
+  @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
+}
+
+.badge-primary {
+  @apply badge bg-blue-100 text-blue-800;
+}
+
+.badge-success {
+  @apply badge bg-green-100 text-green-800;
+}
+
+.badge-warning {
+  @apply badge bg-yellow-100 text-yellow-800;
+}
+
+.badge-danger {
+  @apply badge bg-red-100 text-red-800;
+}
+
+.badge-secondary {
+  @apply badge bg-gray-100 text-gray-800;
+}
+
+/* アラートの統一スタイル */
+.alert {
+  @apply rounded-md p-4;
+}
+
+.alert-success {
+  @apply alert bg-green-50 border border-green-200 text-green-800;
+}
+
+.alert-error {
+  @apply alert bg-red-50 border border-red-200 text-red-800;
+}
+
+.alert-warning {
+  @apply alert bg-yellow-50 border border-yellow-200 text-yellow-800;
+}
+
+.alert-info {
+  @apply alert bg-blue-50 border border-blue-200 text-blue-800;
+}
+
+/* ユーティリティクラス */
+.text-truncate {
+  @apply truncate;
+}
+
+.text-wrap {
+  word-wrap: break-word;
+}
+
+.full-height {
+  min-height: calc(100vh - 4rem);
+}
+
+/* アクセシビリティ */
+.sr-only {
+  @apply absolute w-px h-px p-0 -m-px overflow-hidden whitespace-nowrap border-0;
+}
+
+/* ダークモード対応（将来の拡張用） */
+@media (prefers-color-scheme: dark) {
+  /* ダークモードのスタイルは将来実装 */
+}
